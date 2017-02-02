@@ -1,3 +1,6 @@
+## Dependencies
+run `ansible-galaxy install -r {role_file} -p {role_path}`
+
 ## Additional Variables:
 
 ```yaml
