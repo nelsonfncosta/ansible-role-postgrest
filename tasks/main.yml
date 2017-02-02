@@ -30,7 +30,7 @@
   become: yes
   become_user: postgres
   postgresql_user:
-   name: " {{postgrest_anonymous_user}}"
+   name: "{{postgrest_anonymous_user}}"
    db: "{{ postgrest_database }}"
    role_attr_flags: "noinherit,nologin"
 
