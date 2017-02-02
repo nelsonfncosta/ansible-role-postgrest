@@ -1,3 +1,6 @@
+# ansible-role-postgrest
+Role to install PostgREST (ubuntu/debian)
+
 ## Dependencies
 run `ansible-galaxy install -r {role_file} -p {role_path}`
 
