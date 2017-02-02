@@ -1,0 +1,18 @@
+- name: Create PostgreSQL {{ postgrest_add_user }} user in DB
+  become: yes
+  become_user: postgres
+  postgresql_user:
+   name: "{{ postgrest_add_user }}"
+   db: "{{ postgrest_database }}"
+   role_attr_flags: "noinherit,nologin"
+
+- name: Grant permissions to {{ postgrest_add_user }}
+  become: yes
+  become_user: postgres
+  postgresql_privs:
+    db: "{{ postgrest_database }}"
+    schema: "{{ postgrest_schema }}"
+    privs: SELECT
+    type: table
+    objs: ALL_IN_SCHEMA
+    role: "{{ postgrest_add_user }}"

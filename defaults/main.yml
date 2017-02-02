@@ -1,0 +1,13 @@
+# file: postgrest/defaults/main.yml
+
+postgrest_bin_name: postgrest
+postgrest_bin_path: /usr/local/bin
+postgrest_database: postgres
+postgrest_schema: public
+postgrest_pool: 100 # check pg max connections
+postgrest_jwt_secret: 'secret'
+postgrest_port: 3000
+postgrest_anonymous_user: anon
+postgrest_connection_user: postgres
+postgrest_conf_path: /etc/postgrest.conf
+postgrest_service_user: postgres

@@ -1,0 +1,5 @@
+- name: restart postgrest
+  systemd:
+    name: postgrest
+    state: restarted
+    daemon_reload: yes

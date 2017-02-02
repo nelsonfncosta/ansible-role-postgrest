@@ -1,0 +1,38 @@
+- name: Download && Unpack PostgREST
+  unarchive:
+    src: https://github.com/begriffs/postgrest/releases/download/v0.4.0.0/postgrest-0.4.0.0-ubuntu.tar.xz
+    dest: /usr/local/bin
+    mode: 0755
+    copy: no
+  become: yes
+
+- name: PostgREST systemd unit
+  template:
+    src: postgrest.service.tpl
+    dest: /etc/systemd/system/{{postgrest_bin_name}}.service
+    force: yes
+  notify: restart postgrest
+
+- name: PostgREST systemd conf
+  template:
+    src: postgrest.conf.tpl
+    dest: "{{ postgrest_conf_path }}"
+    force: yes
+  notify: restart postgrest
+
+- name: PostgREST enable service
+  systemd:
+    name: "{{postgrest_bin_name}}"
+    enabled: yes
+    state: started
+
+- name: Create PostgreSQL anonymous user
+  become: yes
+  become_user: postgres
+  postgresql_user:
+   name: " {{postgrest_anonymous_user}}"
+   db: "{{ postgrest_database }}"
+   role_attr_flags: "noinherit,nologin"
+
+- include: additional_user.yml
+  when: postgrest_add_user is defined
