@@ -11,3 +11,4 @@ postgrest_anonymous_user: anon
 postgrest_connection_user: postgres
 postgrest_conf_path: /etc/postgrest.conf
 postgrest_service_user: postgres
+postgrest_proxy_url: 0.0.0.0
