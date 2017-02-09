@@ -1,6 +1,5 @@
 ####
 #
-# Movvo {{ app_env }} API
 #
 ####
 
