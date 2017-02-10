@@ -7,7 +7,7 @@ db-uri = "postgres://{{ postgrest_connection_user }}@/{{ postgrest_database }}"
 db-schema = "{{postgrest_schema}}"
 db-anon-role = "{{postgrest_anonymous_user}}"
 db-pool = {{postgrest_pool}}
-server-proxy-url = "{{postgrest_proxy_url}}"
+server-proxy-uri = "{{postgrest_proxy_uri}}"
 server-host = "*4"
 server-port = {{postgrest_port}}
 
