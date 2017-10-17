@@ -1,6 +1,6 @@
 - name: Download && Unpack PostgREST
   unarchive:
-    src: https://github.com/begriffs/postgrest/releases/download/v0.4.0.0/postgrest-0.4.0.0-ubuntu.tar.xz
+    src: "{{postgrest_download_url}}"
     dest: /usr/local/bin
     mode: 0755
     copy: no
