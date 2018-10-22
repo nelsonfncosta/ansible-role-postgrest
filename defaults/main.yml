@@ -1,5 +1,5 @@
 # file: postgrest/defaults/main.yml
-postgrest_download_url: https://github.com/begriffs/postgrest/releases/download/v0.4.0.0/postgrest-0.4.0.0-ubuntu.tar.xz
+postgrest_download_url: https://github.com/PostgREST/postgrest/releases/download/v0.4.4.0/postgrest-v0.4.4.0-ubuntu.tar.xz
 postgrest_bin_name: postgrest
 postgrest_bin_path: /usr/local/bin
 postgrest_database: postgres
